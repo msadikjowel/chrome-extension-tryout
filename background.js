@@ -1,5 +1,5 @@
 chrome.runtime.onInstalled.addListener(() => {
-    console.log('installed');
+    console.log('Extension have been successfully installed');
 });
 
 chrome.bookmarks.onCreated.addListener(() => {
