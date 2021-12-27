@@ -2,5 +2,28 @@
     "name": "my first extension",
     "version": "1.0.0",
     "description": "This is my first cool extension",
-    "manifest_version": 2
+    "manifest_version": 2,
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.youtube.com/*"
+            ],
+            "exclude_matches": [
+                "https://*.youtube.com/watch*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "permissions": [
+        "bookmarks"
+    ]
 }
